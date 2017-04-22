@@ -1,0 +1,15 @@
+filename:	${refdata.content.season.title.value}_BeTTV_VSR.vcf
+
+<#setting datetime_format="iso">
+<#list selection as referee>
+BEGIN:VCARD
+VERSION:3.0
+N:${referee.name.value};${referee.firstName.value};;<#if referee.title??>${referee.title.value}</#if>;
+FN:${referee.displayTitle.value}
+<#list referee.phoneNumber as phonenumber>TEL;TYPE=${phonenumber.private?string('home', 'work')},${phonenumber.isCell.value?string('cell', 'voice')}:${phonenumber.VCard.value}
+</#list>
+<#list referee.EMail as email>EMAIL;TYPE=${email.private?string('home', 'work')}:${email.EMail.value}
+</#list>
+REV:${refdata.info.modified?datetime?string["yyyyMMdd'T'hhmmss'Z'"]}
+END:VCARD
+</#list>

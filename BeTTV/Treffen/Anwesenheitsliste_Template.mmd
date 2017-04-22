@@ -1,0 +1,34 @@
+subject:	VSR-Lehrgang
+subtitle:	Anwesenheitsliste
+date:			2017-01-19T19:00
+filename:	2017-01-19_Anwesenheitsliste.mmd
+
+<#assign maxcount = 10 >
+
+<!--
+
+\begin{longtabu}[l]{@{}>{\RaggedRight}p{.05\textwidth}@{\hspace{.01\textwidth}}>{\RaggedRight}p{.3\textwidth}@{\hspace{.01\textwidth}}>{\RaggedRight}p{.3\textwidth}@{\hspace{.01\textwidth}}>{\RaggedRight}p{.32\textwidth}@{}}
+		\toprule
+		\textbf{\small Nr.} & \textbf{\small Name} & \textbf{\small Verein} & \textbf{\small Unterschrift}\\
+		\midrule
+	\endhead
+		\midrule
+		\multicolumn{4}{@{}r@{}}{\emph{\footnotesize weiter auf der nächsten Seite\dots}}\\
+		\bottomrule
+	\endfoot
+		\bottomrule
+	\endlastfoot
+
+<#list selection as referee>
+		${referee?counter} & -->${referee.tableName.value}<!-- & --><#if referee.member??>${referee.member.displayTitle.value}</#if><#if referee.reffor??> *${referee.reffor.displayTitle.value}*</#if><!-- & \\
+		<#sep>\midrule</#sep>
+</#list>
+
+<#list (selection?size + 1)..maxcount as count>
+		\midrule
+		${count} &&& \\
+</#list>
+
+\end{longtabu}
+
+-->
