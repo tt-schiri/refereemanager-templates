@@ -44,7 +44,9 @@ Which means:
 	- don't make money with them
 	- mention the creator
 	- share derivates with the same license
-
+- programs are free and open source
+	- you have to provide the source code of the programs
+	- if you change the source code, you have to distribute it under the same license
 
 ### Copyright
 
