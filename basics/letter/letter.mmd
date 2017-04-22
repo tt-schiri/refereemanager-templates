@@ -1,0 +1,19 @@
+Quotes Language:		german
+Base Header Level:	3
+latex input:				kleinod-mmd-scrlttr2
+MyOptions:					author=schiri, font=droid, layout=infospaltefett <#if options??>, ${options!}</#if>
+latex input:				kleinod-mmd-style
+Title:							${subject}
+MyBetreff:					${subject}
+Date:								<#setting datetime_format="iso"><#setting locale="de">${date?datetime?string["d. MMMM yyyy"]}
+MyAnA:							${current.fullName.value}<#if current.primaryAddress??>
+MyAnB:							<#if current.primaryAddress.street??>${current.primaryAddress.street.value}</#if> <#if current.primaryAddress.number??>${current.primaryAddress.number.value}</#if>
+MyAnC:							<#if current.primaryAddress.zipCode??>${current.primaryAddress.zipCode.value}</#if> <#if current.primaryAddress.city??>${current.primaryAddress.city.value}</#if></#if>
+MyAnrede:						${opening}
+MyGruss:						${closing}
+MyUnterschrift:			${signature}
+MyAnlage:						<#list attachment as att>${att.title.value}<#sep>, </#sep></#list>
+latex input:				kleinod-mmd-begin-lttr
+latex footer:				kleinod-mmd-end-lttr
+
+${body}
