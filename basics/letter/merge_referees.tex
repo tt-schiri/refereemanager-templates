@@ -1,0 +1,14 @@
+\documentclass[twoside]{scrartcl}
+
+\usepackage{pdfpages}
+
+\begin{document}
+	\includepdfset{pages=-}
+
+	<#list merges as merge>
+		\includepdf{${merge}}
+		<#sep>\cleardoublepage</#sep>
+	</#list>
+
+\end{document}
+

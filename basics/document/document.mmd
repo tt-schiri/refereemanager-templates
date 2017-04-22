@@ -1,0 +1,13 @@
+Quotes Language:		german
+Base Header Level:	3
+latex input:				kleinod-mmd-scrartcl
+MyOptions:					author=schiri, font=droid, notitlepage, noauthor, pagestyle=fuss <#if options??>, ${options!}</#if>
+latex input:				kleinod-mmd-style
+Title:							${subject}
+MySubTitle:					${subtitle!}
+Date:								${date}
+latex input:				kleinod-mmd-begin-doc
+
+<!-- \maketitle -->
+
+${body}

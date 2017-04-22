@@ -1,0 +1,17 @@
+\documentclass[twoside]{scrartcl}
+
+\usepackage{pdfpages}
+
+\begin{document}
+	\includepdfset{pages=-}
+
+	\includepdf{${current.fileName.value}.pdf}
+	\cleardoublepage
+
+	<#list attachment as att>
+		\includepdf<#if att.landscape?? && att.landscape.value >[landscape=true]</#if>{${att.filename.value}}
+		<#sep>\cleardoublepage</#sep>
+	</#list>
+
+\end{document}
+
