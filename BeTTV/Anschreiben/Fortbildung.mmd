@@ -1,0 +1,15 @@
+subject: Erinnerung Fortbildung
+opening: Hallo ${current.firstName.value},
+closing: Gruß,
+signature: Ekkart.
+filename:	${current.fileName.value}.mmd
+
+<#setting datetime_format="iso"><#setting locale="de">
+
+laut meinen Unterlagen war Deine letzte Ausbildung als ${current.highestTrainingLevel.type.shorttitle.value} am ${current.lastTrainingUpdate.value?date["yyyy-MM-dd"]?string["dd.MM.yyyy"]}.
+
+Das heißt, um Deine Lizenz nicht zu verlieren, müsstest Du eine Fortbildung bis Ende ${current.nextTrainingUpdate.value?date["yyyy-MM-dd"]?string["yyyy"]} absolvieren.
+
+Wie wäre es mit der Fortbildung diesen Donnerstag, den 27. April 2017, 19 Uhr in der Geschäftsstelle des BeTTV?
+
+Falls ich eine Fortbildung übersehen habe - gib mir einfach Bescheid.
