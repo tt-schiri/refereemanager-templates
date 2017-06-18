@@ -21,6 +21,7 @@
 
 			th, caption {
 				text-align: left;
+				font-size: smaller;
 			}
 
 			tr.empty {
@@ -51,24 +52,95 @@
 			</tr>
 		</table>
 
+		<#assign sum = 0>
 		<table>
 			<caption>Anzahl der Datensätze</caption>
 			<tr>
 				<th>Personen</th>
 				<td>${content.person?size}</td>
+				<#assign sum += content.person?size>
 			</tr>
 			<tr>
 				<th>Schiedsrichter_innen</th>
 				<td>${content.referee?size}</td>
+				<#assign sum += content.referee?size>
 			</tr>
 			<tr>
 				<th>Azubis</th>
 				<td>${content.trainee?size}</td>
+				<#assign sum += content.trainee?size>
+			</tr>
+			<tr class="empty" />
+			<tr>
+				<th>Ligen</th>
+				<td>${content.league?size}</td>
+				<#assign sum += content.league?size>
+			</tr>
+			<tr>
+				<th>Clubs</th>
+				<td>${content.club?size}</td>
+				<#assign sum += content.club?size>
+			</tr>
+			<tr>
+				<th>Teams</th>
+				<td>${content.team?size}</td>
+				<#assign sum += content.team?size>
+			</tr>
+			<tr class="empty" />
+			<tr>
+				<th>Turniere</th>
+				<td>${content.tournament?size}</td>
+				<#assign sum += content.tournament?size>
+			</tr>
+			<tr>
+				<th>Andere Termine</th>
+				<td>${content.otherdate?size}</td>
+				<#assign sum += content.otherdate?size>
+			</tr>
+			<tr>
+				<th>Orte</th>
+				<td>${content.venue?size}</td>
+				<#assign sum += content.venue?size>
 			</tr>
 			<tr class="empty" />
 			<tr>
 				<th>Summe</th>
-				<td>---</td>
+				<td>${sum}</td>
+			</tr>
+		</table>
+
+		<#assign sum = 0>
+		<table>
+			<caption>Typen</caption>
+			<tr>
+				<th>Geschlechter</th>
+				<td>${content.sexType?size}</td>
+				<#assign sum += content.sexType?size>
+			</tr>
+			<tr>
+				<th>Kontaktarten</th>
+				<td>${content.contactType?size}</td>
+				<#assign sum += content.contactType?size>
+			</tr>
+			<tr>
+				<th>Status</th>
+				<td>${content.statusType?size}</td>
+				<#assign sum += content.statusType?size>
+			</tr>
+			<tr>
+				<th>Einsatzarten</th>
+				<td>${content.refereeAssignmentType?size}</td>
+				<#assign sum += content.refereeAssignmentType?size>
+			</tr>
+			<tr>
+				<th>Ausbildungsarten</th>
+				<td>${content.trainingLevelType?size}</td>
+				<#assign sum += content.trainingLevelType?size>
+			</tr>
+			<tr class="empty" />
+			<tr>
+				<th>Summe</th>
+				<td>${sum}</td>
 			</tr>
 		</table>
 	</body>
