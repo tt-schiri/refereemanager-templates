@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<#setting datetime_format="iso"><#setting locale="de">
+<html>
+	<head>
+		<title>Referee-Manager</title>
+		<style type="text/css">
+			body {
+				background-color: #FFFFFF;
+				font-family: sans-serif;
+			}
+
+			table {
+				margin-top: 1ex;
+				margin-bottom: 2ex;
+			}
+
+			caption {
+				color: darkgreen;
+				font-weight: bold;
+			}
+
+			th, caption {
+				text-align: left;
+			}
+
+			tr.empty {
+				height: 1ex;
+			}
+
+			td {
+				padding: .5ex 1ex .5ex 1ex;
+			}
+
+		</style>
+
+	</head>
+	<body>
+		<table>
+			<caption>Metainformationen</caption>
+			<tr>
+				<th>Erzeugt am</th>
+				<td>${info.created?datetime?string["dd.MM.yyyy, HH:mm"]} Uhr</td>
+			</tr>
+			<tr>
+				<th>Geändert am</th>
+				<td>${info.modified?datetime?string["dd.MM.yyyy, HH:mm"]} Uhr</td>
+			</tr>
+			<tr>
+				<th>Saison</th>
+				<td>${content.season.displayTitle.value}</td>
+			</tr>
+		</table>
+
+		<table>
+			<caption>Anzahl der Datensätze</caption>
+			<tr>
+				<th>Personen</th>
+				<td>${content.person?size}</td>
+			</tr>
+			<tr>
+				<th>Schiedsrichter_innen</th>
+				<td>${content.referee?size}</td>
+			</tr>
+			<tr>
+				<th>Azubis</th>
+				<td>${content.trainee?size}</td>
+			</tr>
+			<tr class="empty" />
+			<tr>
+				<th>Summe</th>
+				<td>---</td>
+			</tr>
+		</table>
+	</body>
+</html>
