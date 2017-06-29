@@ -29,8 +29,8 @@ options:	orientation=landscape
 --><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${referee.member.displayTitle.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><#if referee.reffor??><!--\newline\textsl{--><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${referee.reffor.displayTitle.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><!--}--></#if><!-- &
 --><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${referee.highestTrainingLevel.type.shorttitle.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><!-- &
 --><#if referee.primaryAddress??><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${referee.primaryAddress.displayTitle.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if></#if><!-- &
---><#list referee.prefer as prefer><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${prefer.displayTitle.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><#sep><!--\newline --></#sep></#list><!-- &
---><#list referee.avoid as avoid><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${avoid.displayTitle.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><#sep><!--\newline --></#sep></#list><!--
+--><#list referee.prefer as prefer><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${prefer.displayText.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><#sep><!--\newline --></#sep></#list><!-- &
+--><#list referee.avoid as avoid><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${avoid.displayText.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><#sep><!--\newline --></#sep></#list><!--
 \\
 <#if referee.remark??>
 <#if referee?item_parity == "odd" >\rowcolor{Linen}<#else>\rowcolor{white}</#if>
