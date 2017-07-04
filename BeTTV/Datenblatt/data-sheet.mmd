@@ -18,8 +18,8 @@ options:	notitlepage, noauthor, noemail, nosponsorlogo, pagestyle=leer
 			\midrule
 				Name & -->${current.displayTitle.value}<!--\\
 				Ausbildung & -->${current.highestTrainingLevel.type.shorttitle.value} (${current.highestTrainingLevel.type.title.value})<!--\\
-				Mitglied bei & -->${current.member.displayTitle.value}<!--\\
-				<#if current.reffor??>Schiedst für & -->${current.reffor.displayTitle.value}<!--\\</#if>
+				Mitglied bei & -->${current.member.displayText.value}<!--\\
+				<#if current.reffor??>Schiedst für & -->${current.reffor.displayText.value}<!--\\</#if>
 			\bottomrule
 		\end{longtabu}
 
@@ -57,8 +57,8 @@ options:	notitlepage, noauthor, noemail, nosponsorlogo, pagestyle=leer
 				VSR-Mitteilungen & --><#if current.EMail?? && (current.EMail?size > 0) >per E-Mail<#if current.docsByLetter.value> und </#if></#if><#if current.docsByLetter.value>per Brief</#if><!--\\
 				Adresse & --><#list current.address as address>${address.displayTitle.value}<#sep>; </#sep><#else>---</#list><!--\\
 				URL & --><#list current.URL as url>${url.displayTitle.value}<#sep>; </#sep><#else>---</#list><!--\\
-				Bevorzugt schiedsen & --><#list current.prefer as prefer>${prefer.displayTitle.value}<#sep>; </#sep><#else>---</#list><!--\\
-				Nicht schiedsen & --><#list current.avoid as avoid>${avoid.displayTitle.value}<#sep>; </#sep><#else>---</#list><!--\\
+				Bevorzugt schiedsen & --><#list current.prefer as prefer>${prefer.displayText.value}<#sep>; </#sep><#else>---</#list><!--\\
+				Nicht schiedsen & --><#list current.avoid as avoid>${avoid.displayText.value}<#sep>; </#sep><#else>---</#list><!--\\
 				<#list current.trainingLevel as traininglevel>
 					-->${traininglevel.type.displayText.value} seit<!-- & --><#if traininglevel.since?? >${traininglevel.since.value?date['yyyy-MM-dd']?string['dd.MM.yyyy']}<#else>---</#if><!--\\
 				</#list>
