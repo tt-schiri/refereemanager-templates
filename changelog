@@ -1,11 +1,21 @@
-# v0.2.0
+refereemanager-templates (0.3.0) unstable; urgency=low
 
-*Released:* 2017-04-23
+	* data sheet
+	* letters for data sheets, license update, psssive licenses
+	* small bugfixes
 
-- BeTTV-Templates for id cards, lists, and meetings
+-- Ekkart Kleinod <ekleinod@edgesoft.de>  Sun, 16 Jul 2017 23:40:00 +0200
 
-# v0.1.0
 
-*Released:* 2017-04-23
+refereemanager-templates (0.2.0) unstable; urgency=low
 
-- basic templates for documents, emails, letters, and texts
+	* BeTTV-Templates for id cards, lists, and meetings
+
+-- Ekkart Kleinod <ekleinod@edgesoft.de>  Sun, 23 Apr 2017 12:00:00 +0100
+
+
+refereemanager-templates (0.2.0) unstable; urgency=low
+
+	* basic templates for documents, emails, letters, and texts
+
+-- Ekkart Kleinod <ekleinod@edgesoft.de>  Sun, 23 Apr 2017 12:00:00 +0100
