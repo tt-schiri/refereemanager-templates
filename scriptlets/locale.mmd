@@ -5,11 +5,20 @@ signature: Ekkart.
 filename:	${.now?date?string["yyyy-MM-dd"]}_Passivsetzung_${current.fileName.value}.mmd
 
 <#setting datetime_format="iso"><#setting locale="de">
+<#assign needsUpdate = (current.nextTrainingUpdate.value?date["yyyy-MM-dd"]?string["yyyy"]?number <= .now?date?string["yyyy"]?number) >
+<#if needsUpdate >
 Laut meinen Unterlagen war Deine letzte Ausbildung als ${current.highestTrainingLevel.type.shorttitle.value} am ${current.lastTrainingUpdate.value?date["yyyy-MM-dd"]?string["dd.MM.yyyy"]}.
 Das heißt, um Deine Lizenz nicht zu verlieren, hättest Du an einer Fortbildung bis Ende ${current.nextTrainingUpdate.value?date["yyyy-MM-dd"]?string["yyyy"]} teilnehmen müssen.
+</#if>
+
+<#if needsUpdate >Außerdem ist es<#else>Es ist</#if> für den Erhalt der Lizenz nötig, einmal im Jahr bei einem Turnier zu schiedsen.
+Das hast Du nicht getan.
 
 Wir setzen daher Deine Lizenz passiv, das heißt, Du wirst offiziell nicht mehr als VSR an den Verband gemeldet.
-Du hast die Chance, Deine Lizenz wieder zu aktivieren, indem Du an einer Fortbildung teilnimmst.
+Du hast die Chance, Deine Lizenz wieder zu aktivieren, indem Du
+
+<#if needsUpdate >- an einer Fortbildung teilnimmst</#if>
+- bei einem Turnier schiedst
 
 Wenn Du das nicht tust, werden wir Dir die Lizenz Ende der nächsten Saison entziehen.
 
