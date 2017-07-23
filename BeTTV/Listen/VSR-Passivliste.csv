@@ -1,0 +1,24 @@
+filename:	${refdata.content.season.title.value}_BeTTV_VSR-Passivliste.csv
+
+<#setting datetime_format="iso"><#setting locale="de">
+"Name";"Vorname";"Status";"Mitglied";"Schiedst für";"VSR seit";"Ausbildung";"Anmerkung"
+<#list selection as referee>
+<@compress single_line=true>
+"<#if referee.name??>${referee.name.value}</#if>"
+;
+"<#if referee.firstName??>${referee.firstName.value}</#if>"
+;
+"${referee.status.displayTitleShort.value}"
+;
+"<#if referee.member??>${referee.member.displayTitleShort.value}</#if>"
+;
+"<#if referee.reffor??>${referee.reffor.displayTitleShort.value}</#if>"
+;
+"<#if referee.firstTrainingLevel?? && referee.firstTrainingLevel.since?? >${referee.firstTrainingLevel.since.value?date['yyyy-MM-dd']?string['dd.MM.yyyy']}</#if>"
+;
+"<#if referee.highestTrainingLevel??>${referee.highestTrainingLevel.type.shorttitle.value}</#if>"
+;
+"<#if referee.remark?? >${referee.remark.value}</#if>"
+</@compress>
+
+</#list>
