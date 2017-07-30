@@ -3,9 +3,9 @@ filename:	${refdata.content.season.title.value}_Andere_Termine.txt
 <#setting datetime_format="iso"><#setting locale="de">
 <#list refdata.content.otherEvent as event>
 <@compress single_line=true>
-- ${event.dateText.value?date['yyyy-MM-dd']?string['EEE, dd.MM.yyyy']}
-<#if event.end??> -- ${event.end.value?date['yyyy-MM-dd']?string['EEE, dd.MM.yyyy']}</#if>
-${event.displayTitleShort.value}
+- ${event.startDate?date['yyyy-MM-dd']?string['EEE. dd.MM.yyyy']}
+<#if event.endDate??> -- ${event.endDate?date['yyyy-MM-dd']?string['EEE. dd.MM.yyyy']}</#if>
+-- ${event.displayTitleShort.value}
 </@compress>
 
 </#list>
