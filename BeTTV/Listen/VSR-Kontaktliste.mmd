@@ -1,7 +1,7 @@
 subject:	Kontaktliste Verbandsschiedsrichter
 subtitle:	BTTV, Saison ${refdata.content.season.title.value}
 date:			Stand: <#setting datetime_format="iso"><#setting locale="de"> ${refdata.info.modified?datetime?string["d. MMMM yyyy"]}
-filename:	${refdata.content.season.title.value}_BeTTV_VSR-Kontaktliste.mmd
+filename:	BeTTV_VSR-Kontaktliste.mmd
 
 <!--
 
@@ -25,7 +25,7 @@ filename:	${refdata.content.season.title.value}_BeTTV_VSR-Kontaktliste.mmd
 <#if referee?item_parity == "odd" >\rowcolor{Linen}<#else>\rowcolor{white}</#if>
 --><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${referee.tableName.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><!-- &
 --><#list referee.phoneNumber as phonenumber><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${phonenumber.displayTitle.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><#sep><!--\newline --></#sep></#list><#if referee.phoneNumber?? && (referee.phoneNumber?size > 0) && referee.EMail?? && (referee.EMail?size > 0) ><!--\mbox{}\newline --></#if><#list referee.EMail as email><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${email.displayTitle.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><#sep><!--\newline --></#sep></#list><!-- &
---><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${referee.member.displayTitle.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><#if referee.reffor??><!--\newline\textsl{--><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${referee.reffor.displayTitle.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><!--}--></#if><!-- &
+--><#if referee.member??><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${referee.member.displayTitleShort.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if></#if><#if referee.reffor??><!--\newline\textsl{--><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${referee.reffor.displayTitleShort.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><!--}--></#if><!-- &
 --><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${referee.highestTrainingLevel.type.shorttitle.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><!--
 \\
 </#list>
