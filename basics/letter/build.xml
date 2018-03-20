@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- Create all pdfs from mmd. -->
+<!-- Create all pdfs from md. -->
 
-<project name="mmd2pdf" default="help" basedir=".">
+<project name="md2pdf" default="help" basedir=".">
 
 	<property name="file:zip" value="pdfs.zip" />
 
-	<property name="path:mmd" value="mmd" />
+	<property name="path:md" value="md" />
 	<property name="path:generated" value="pdf" />
 
 	<target name="help" description="Shows help text.">
@@ -20,9 +20,9 @@
 		</java>
 	</target>
 
-	<target name="all" description="Create pdf files from mmd.">
+	<target name="all" description="Create pdf files from md.">
 
-		<echo message="Create pdf files from mmd: start." />
+		<echo message="Create pdf files from md: start." />
 
 		<antcall target="clear" />
 
@@ -31,7 +31,7 @@
 		<antcall target="createpdffiles" />
 		<antcall target="createpdffiles" />
 
-		<echo message="Create pdf files from mmd: stop." />
+		<echo message="Create pdf files from md: stop." />
 		<echo />
 		<echo message="Call target 'zippdffiles' to zip pdfs in ${path:generated}." />
 		<echo message="Call target 'mergepdffiles' to tex all ./*.tex files." />
@@ -40,7 +40,7 @@
 
 	</target>
 
-	<target name="createtexfiles" description="Create tex files from mmd files.">
+	<target name="createtexfiles" description="Create tex files from md files.">
 
 		<mkdir dir="${path:generated}" />
 
@@ -50,8 +50,8 @@
 			<arg value="-t" />
 			<arg value="latex" />
 			<srcfile />
-			<fileset dir="${path:mmd}" includes="*.mmd" />
-			<mapper type="glob" from="*.mmd" to="${path:generated}/*.tex" />
+			<fileset dir="${path:md}" includes="*.md" />
+			<mapper type="glob" from="*.md" to="${path:generated}/*.tex" />
 		</apply>
 	</target>
 
