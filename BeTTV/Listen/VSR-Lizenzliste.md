@@ -3,41 +3,59 @@ subtitle:	BeTTV, Saison ${refdata.content.season.title.value}
 date:			Stand: <#setting datetime_format="iso"><#setting locale="de"> ${refdata.info.modified?datetime?string["d. MMMM yyyy"]}
 filename:	BeTTV_VSR-Lizenzliste.md
 
+<#list refdata.content.statusType as statustype>
+
+# ${statustype.displayTitleShort.value}
+
+<#if statustype.mmdmarkupstart??>${statustype.mmdmarkupstart.value}</#if>${statustype.displayTitle.value}<#if statustype.mmdmarkupend??>${statustype.mmdmarkupend.value}</#if>
+
+<#assign ref_array = [] />
+<#list selection as referee>
+	<#if (statustype.id == referee.status.id) >
+		<#assign ref_array = ref_array + [referee] />
+	</#if>
+</#list>
+
+<#list ref_array>
+
 <!--
 
 \footnotesize
 
 \tabulinesep=_.5\parskip^.5\parskip
 
-\begin{longtabu}[l]{@{}>{\RaggedRight}p{.25\textwidth}@{\hspace{.01\textwidth}}>{\RaggedRight}p{.25\textwidth}@{\hspace{.01\textwidth}}>{\RaggedRight}p{.07\textwidth}@{\hspace{.01\textwidth}}>{\RaggedRight}p{.12\textwidth}@{\hspace{.01\textwidth}}>{\RaggedRight}p{.09\textwidth}@{\hspace{.01\textwidth}}>{\RaggedRight}p{.17\textwidth}@{}}
+\begin{longtabu}[l]{@{}>{\RaggedRight}p{.25\textwidth}@{\hspace{.01\textwidth}}>{\RaggedRight}p{.43\textwidth}@{\hspace{.01\textwidth}}>{\RaggedRight}p{.07\textwidth}@{\hspace{.01\textwidth}}>{\RaggedRight}p{.12\textwidth}@{\hspace{.01\textwidth}}>{\RaggedRight}p{.09\textwidth}@{}}
 		\toprule
-		\textbf{\scriptsize Name} & \textbf{\scriptsize Club} & \textbf{\scriptsize Ausb.} & \textbf{\scriptsize Letzte} & \textbf{\scriptsize Nächste} & \textbf{\scriptsize Status} \\
+		\textbf{\scriptsize Name} & \textbf{\scriptsize Club} & \textbf{\scriptsize Ausb.} & \textbf{\scriptsize Letzte} & \textbf{\scriptsize Nächste} \\
 		\midrule
 	\endhead
 		\midrule
-		\multicolumn{6}{@{}r@{}}{\emph{\scriptsize weiter auf der nächsten Seite\dots}}\\
+		\multicolumn{5}{@{}r@{}}{\emph{\scriptsize weiter auf der nächsten Seite\dots}}\\
 		\bottomrule
 	\endfoot
 		\bottomrule
 	\endlastfoot
 
-<#list selection as referee>
+<#items as referee>
+
 <#if referee?item_parity == "odd" >\rowcolor{Linen}<#else>\rowcolor{white}</#if>
---><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${referee.tableName.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><!-- &
---><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if><#if referee.member??>${referee.member.displayTitle.value}<#else>---</#if><#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><#if referee.reffor??><!--\newline\textsl{--><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${referee.reffor.displayTitle.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><!--}--></#if><!-- &
---><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${referee.highestTrainingLevel.type.shorttitle.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><!-- &
---><#if referee.lastTrainingUpdate??><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${referee.lastTrainingUpdate.value?date["yyyy-MM-dd"]?string["dd.MM.yyyy"]}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><#else>---</#if><!-- &
---><#if referee.nextTrainingUpdate??><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${referee.nextTrainingUpdate.value?date["yyyy-MM-dd"]?string["yyyy"]}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><#else>---</#if><!-- &
---><#if referee.status.mmdmarkupstart??>${referee.status.mmdmarkupstart.value}</#if>${referee.status.displayTitleShort.value}<#if referee.status.mmdmarkupend??>${referee.status.mmdmarkupend.value}</#if><!--
+-->${referee.tableName.value}<!-- &
+--><#if referee.member??>${referee.member.displayTitle.value}<#else>---</#if><#if referee.reffor??><!--\newline\textsl{-->${referee.reffor.displayTitle.value}<!--}--></#if><!-- &
+-->${referee.highestTrainingLevel.type.shorttitle.value}<!-- &
+--><#if referee.lastTrainingUpdate??>${referee.lastTrainingUpdate.value?date["yyyy-MM-dd"]?string["dd.MM.yyyy"]}<#else>---</#if><!-- &
+--><#if referee.nextTrainingUpdate??>${referee.nextTrainingUpdate.value?date["yyyy-MM-dd"]?string["yyyy"]}<#else>---</#if><!--
 \\
-</#list>
+
+</#items>
 
 \end{longtabu}
 
 -->
 
-**Legende:**
+<#else>
 
-<#list refdata.content.statusType as statustype>
-- <#if statustype.mmdmarkupstart??>${statustype.mmdmarkupstart.value}</#if><#if statustype.remark??>${statustype.remark.value}<#else>${statustype.displayTitle.value}</#if><#if statustype.mmdmarkupend??>${statustype.mmdmarkupend.value}</#if>
+Keine VSR.
+
+</#list>
+
 </#list>
