@@ -1,4 +1,4 @@
-filename:	${refdata.content.season.title.value}_BeTTV_VSR-Passivliste.csv
+filename:	${refdata.content.season.title.value}_BeTTV_VSR-Liste.csv
 
 <#setting datetime_format="iso"><#setting locale="de">
 "Name";"Vorname";"Status";"Mitglied";"Schiedst für";"VSR seit";"Ausbildung";"Anmerkung"
