@@ -1,7 +1,7 @@
 subject:	Datenblatt
 subtitle:	${current.displayTitle.value}
 date:			Stand: <#setting datetime_format="iso"><#setting locale="de"> ${refdata.info.modified?datetime?string["d. MMMM yyyy"]}
-filename:	${current.fileName.value}.mmd
+filename:	${current.fileName.value}.md
 options:	notitlepage, noauthor, noemail, nosponsorlogo, pagestyle=leer
 
 <#setting datetime_format="iso"><#setting locale="de">
