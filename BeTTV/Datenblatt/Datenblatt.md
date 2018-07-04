@@ -18,7 +18,7 @@ options:	notitlepage, noauthor, noemail, nosponsorlogo, pagestyle=leer
 			\midrule
 				Name & -->${current.displayTitle.value}<!--\\
 				Ausbildung & -->${current.highestTrainingLevel.type.shorttitle.value} (${current.highestTrainingLevel.type.title.value})<!--\\
-				Mitglied bei & -->${current.member.displayText.value}<!--\\
+				Mitglied bei & --><#if current.member?? >${current.member.displayText.value}<#else>---</#if><!--\\
 				<#if current.reffor??>Schiedst für & -->${current.reffor.displayText.value}<!--\\</#if>
 			\bottomrule
 		\end{longtabu}
