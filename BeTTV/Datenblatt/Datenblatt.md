@@ -54,7 +54,7 @@ options:	notitlepage, noauthor, noemail, nosponsorlogo, pagestyle=leer
 
 			\multicolumn{2}{@{}l@{}}{\textbf{Sichtbar für VSRA}}\\
 			\midrule
-				VSR-Mitteilungen & --><#if current.EMail?? && (current.EMail?size > 0) >per E-Mail<#if current.docsByLetter.value> und </#if></#if><#if current.docsByLetter.value>per Brief</#if><!--\\
+				VSR-Mitteilungen & --><#if current.EMail?? && (current.EMail?size > 0) >per E-Mail<#if current.docsByLetterCombined.value> und </#if></#if><#if current.docsByLetterCombined.value>per Brief</#if><!--\\
 				Adresse & --><#list current.address as address>${address.displayTitle.value}<#sep>; </#sep><#else>---</#list><!--\\
 				URL & --><#list current.URL as url>${url.displayTitle.value}<#sep>; </#sep><#else>---</#list><!--\\
 				Bevorzugt schiedsen & --><#list current.prefer as prefer>${prefer.displayText.value}<#sep>; </#sep><#else>---</#list><!--\\
