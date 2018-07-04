@@ -59,7 +59,7 @@
 		<echo message="createpdffiles" />
 
 		<!-- force is set, because we need several LaTeX runs to be executed -->
-		<apply executable="pdflatex" parallel="false" output="pdflatex.log" force="true">
+		<apply executable="pdflatex" parallel="false" output="pdflatex.log" force="true" failonerror="true">
 			<arg value="-interaction=nonstopmode" />
 			<arg value="-output-directory=${path:generated}" />
 			<srcfile />
