@@ -3,13 +3,13 @@ filename:	schiri-werden.md
 <#setting datetime_format="iso"><#setting locale="de">
 ---
 title: Schiri werden
-date: ${refdata.info.modified?datetime?string['dd.MM.yyyy']}
+date: ${.now?date?string['dd.MM.yyyy']}
 ---
 
 {% capture thumb %}{% include img.html src='VSR-Lehrgang-Ankündigung.png' title='VSR-Lehrgang-Ankündigung' align='right' %}{% endcapture %}
 {% include download.html file='VSR-Lehrgang-Ankündigung.pdf' title = thumb %}
 Die Berliner Schiedsrichterinnen und Schiedsrichter suchen Verstärkung.
-Vielleicht wäre die Schiedsrichterei auch was für Dich?
+Vielleicht wäre das was für Dich?
 
 Der nächste Lehrgang ist im Januar.
 Melde Dich beim {% include link.html target='/personen.html' title='Verbandsschiedsrichterausschuss (VSRA)' %}.
@@ -19,8 +19,8 @@ Genaueres findest Du am Ende bei [Formalien](#formalien) oder in der {% include 
 ## Ausbildung
 
 Der erste Schritt ist die Ausbildung als Verbandsschiedsrichterin bzw. Verbandsschiedsrichter (VSR).
-Die Ausbildung findet einmal im Jahr in Berlin in der Geschäftsstelle des BeTTV, Paul-Heyse-Straße statt, sie dauert zwei Abende und endet mit der theoretischen und praktischen Prüfung zu den Berliner Einzelmeisterschaften.
-Zusätzlich gibt es einen freiwilligen praktischen Abend, dessen Termin am ersten theoretischen Abend festgelegt wird.
+Die Ausbildung findet einmal im Jahr in Berlin in der Geschäftsstelle des BeTTV, Paul-Heyse-Straße statt, sie dauert drei Abende und endet mit der theoretischen und praktischen Prüfung zu den Berliner Einzelmeisterschaften.
+Es gibt zwei theoretische und einen praktischen Abend.
 
 Wenn Du bei den BEM lieber spielen willst, prüfen wir Dich zu einem anderen Turnier, das machen wir dann persönlich aus.
 
@@ -64,6 +64,8 @@ Meldung
 Teilnahmegebühr
 : 15,- €
 
+---
+
 <#list refdata.content.otherEvent as event>
 <#if (event.type.id == "EventDateType.Training") >
 ${event.displayTitleShort.value}
@@ -71,6 +73,8 @@ ${event.displayTitleShort.value}
 </#if>
 
 </#list>
+
+---
 
 Teilnahmevoraussetzungen
 : Mindestalter 14 Jahre, Mitglied in einem Berliner TT-Verein, Einzahlung der Teilnahmegebühr, Anschaffung der Verbandsschiedsrichterkleidung (schwarzes Hemd oder Bluse, graue Hose oder Rock, Turnschuhe) und vorheriges Selbststudium der TT-Regeln -- Teil A und B -- und der Wettspielordnung (WO). Die TT-Regeln und die WO werden jedem Teilnehmer per Post oder per E-Mail zugeschickt.

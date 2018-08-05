@@ -1,4 +1,4 @@
-filename:	VSR-Lehrgang-Ankündigung.mmd
+filename:	VSR-Lehrgang-Ankündigung.md
 
 <#setting datetime_format="iso"><#setting locale="de">
 Quotes Language:		german
@@ -11,15 +11,15 @@ latex input:				kleinod-mmd-begin-doc
 
 <!-- \maketitle -->
 
-Die Berliner Schiedsrichter_innen suchen Verstärkung.
-Vielleicht wäre die Schiedsrichterei auch was für Dich?
+Die Berliner Schiedsrichterinnen und Schiedsrichter suchen Verstärkung.
+Vielleicht wäre das was für Dich?
 
-Voraussetzung ist lediglich, dass Du mindestens 14 Jahre und Mitglied eines Berliner Tischtennisvereins bist.
+Voraussetzung ist, dass Du mindestens 14 Jahre und Mitglied eines Berliner Tischtennisvereins bist.
 
 Was erwartet Dich?
 
-- Einsätze als Oberschiedsrichter_in von Bundesliga bis Oberliga
-- Einsätze als Schiedsrichter_in bei Turnieren in Berlin
+- Einsätze als Oberschiedsrichterin bzw. Oberschiedsrichter von Bundesliga bis Oberliga
+- Einsätze als Schiedsrichterin bzw. Schiedsrichter bei Turnieren in Berlin
 - bei Interesse Weiterbildung für nationale und internationale Einsätze
 
 Der nächste Verbandsschiedsrichterlehrgang findet im Januar ${refdata.content.season.endYear.value?string["####"]} statt. Folgende Termine sind wichtig:
@@ -32,10 +32,10 @@ Der nächste Verbandsschiedsrichterlehrgang findet im Januar ${refdata.content.s
 
 Die Anmeldung erfolgt beim Verbandsschiedsrichterausschuss (VSRA)
 
-`vsrausschuss@bettv.de`
+> <vsrausschuss@bettv.de>
 
-Die Kosten für den Lehrgang betragen 15 Euro pro Person.
+Die Kosten für den Lehrgang betragen 15 Euro pro Person und werden traditionell vom Verein übernommen.
 
 Mehr Details findest Du auf den Schiriwebseiten unter
 
-`http://www.tt-schiri.de/schiri-werden.html`
+> <http://www.tt-schiri.de/schiri-werden.html>
