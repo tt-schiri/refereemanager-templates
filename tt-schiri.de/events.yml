@@ -9,6 +9,6 @@ filename:	events.yml
 <#if event.firstDay.startTime??>  time-start: "${event.firstDay.startTime.value}"</#if>
 <#if event.firstDay.endTime??>  time-end: "${event.firstDay.endTime.value}"</#if>
 <#if event.description??>  description: "${event.description.value}"</#if>
-<#if event.venue??>  venue: "${event.venue}"</#if>
+<#if (event.venue?size &gt; 0)>  venue: "${event.venue?first.venue.id}"</#if>
 
 </#list>
