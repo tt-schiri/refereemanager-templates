@@ -1,7 +1,7 @@
 subject:	Kontaktliste Verbandsschiedsrichter
 subtitle:	BTTV, Saison ${refdata.content.season.title.value}
 date:			Stand: <#setting datetime_format="iso"><#setting locale="de"> ${refdata.info.modified?datetime?string["d. MMMM yyyy"]}
-filename:	BeTTV_VSR-Kontaktliste.mmd
+filename:	${refdata.content.season.title.value}_BeTTV_VSR-Kontaktliste.md
 
 <!--
 
