@@ -1,0 +1,10 @@
+filename:	${refdata.content.season.title.value}_Andere_Termine.txt
+
+<#setting datetime_format="iso"><#setting locale="de">
+<#list refdata.content.otherEvent as event>
+<@compress single_line=true>
+- ${event.dateText.valueSafe}<#if event.timeText??>, ${event.timeText.valueSafe} Uhr</#if>
+-- ${event.displayTitleShort.value}
+</@compress>
+
+</#list>

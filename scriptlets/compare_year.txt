@@ -1,0 +1,3 @@
+<#setting datetime_format="iso"><#setting locale="de">
+<#assign needsUpdate = (current.nextTrainingUpdate.value?date["yyyy-MM-dd"]?string["yyyy"]?number <= .now?date?string["yyyy"]?number) >
+<#if needsUpdate >...<#else>...</#if>

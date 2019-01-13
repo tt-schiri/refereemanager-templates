@@ -1,0 +1,8 @@
+filename:	${refdata.content.season.title.value}_BeTTV_VSR-Mails.csv
+
+<#list selection as referee>
+<@compress single_line=true>
+<#if referee.primaryEMail??>${referee.primaryEMail.displayTitle.value}</#if>
+</@compress>
+
+</#list>

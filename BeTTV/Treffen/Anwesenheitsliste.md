@@ -1,7 +1,7 @@
-subject:	VSR-Fortbildung
+subject:	VSR-Tagung
 subtitle:	Anwesenheitsliste
-date:			27. April 2017
-filename:	2017-04-27_Anwesenheitsliste.mmd
+date:			10. April 2018
+filename:	09_Anwesenheitsliste.md
 
 <#assign maxcount = 50 >
 
@@ -20,14 +20,16 @@ filename:	2017-04-27_Anwesenheitsliste.mmd
 	\endlastfoot
 
 <#list selection as referee>
-		${referee?counter} & -->${referee.tableName.value}<!-- & --><#if referee.member??>${referee.member.displayTitle.value}</#if><#if referee.reffor??> *${referee.reffor.displayTitle.value}*</#if><!-- & \\
+		${referee?counter} & -->${referee.tableName.value}<!-- & --><#if referee.member??>${referee.member.displayText.value}</#if><#if referee.reffor??> *${referee.reffor.displayText.value}*</#if><!-- & \\
 		<#sep>\midrule</#sep>
 </#list>
 
-<#list (selection?size + 1)..maxcount as count>
-		\midrule
-		${count} &&& \\
-</#list>
+<#if (selection?size + 1) &lt; maxcount>
+	<#list (selection?size + 1)..maxcount as count>
+			\midrule
+			${count} &&& \\
+	</#list>
+</#if>
 
 \end{longtabu}
 

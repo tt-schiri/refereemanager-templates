@@ -1,0 +1,14 @@
+filename:	events.yml
+
+<#setting datetime_format="iso"><#setting locale="de">
+<#list refdata.content.otherEvent as event>
+-
+  title: ${event.displayTitleShort.value}
+  date-start: ${event.firstDay.date.value?date['yyyy-MM-dd']?string['dd.MM.yyyy']}
+<#if event.lastDay??>  date-end: "${event.lastDay.date.value?date['yyyy-MM-dd']?string['dd.MM.yyyy']}"</#if>
+<#if event.firstDay.startTime??>  time-start: "${event.firstDay.startTime.value}"</#if>
+<#if event.firstDay.endTime??>  time-end: "${event.firstDay.endTime.value}"</#if>
+<#if event.description??>  description: "${event.description.value}"</#if>
+<#if (event.venue?size &gt; 0)>  venue: "${event.venue?first.venue.id}"</#if>
+
+</#list>
