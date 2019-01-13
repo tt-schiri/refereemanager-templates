@@ -88,14 +88,19 @@
 			</tr>
 			<tr class="empty" />
 			<tr>
+				<th>Ligaspiele</th>
+				<td>${content.leagueGame?size}</td>
+				<#assign sum += content.leagueGame?size>
+			</tr>
+			<tr>
 				<th>Turniere</th>
 				<td>${content.tournament?size}</td>
 				<#assign sum += content.tournament?size>
 			</tr>
 			<tr>
 				<th>Andere Termine</th>
-				<td>${content.otherdate?size}</td>
-				<#assign sum += content.otherdate?size>
+				<td>${content.otherEvent?size}</td>
+				<#assign sum += content.otherEvent?size>
 			</tr>
 			<tr>
 				<th>Orte</th>

@@ -1,0 +1,3 @@
+<#setting datetime_format="iso"><#setting locale="de">
+${current.nextTrainingUpdate.value?date["yyyy-MM-dd"]?string["yyyy"]}
+${.now?date?string["yyyy"]}

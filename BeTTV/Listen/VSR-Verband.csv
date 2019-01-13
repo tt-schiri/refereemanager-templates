@@ -1,0 +1,18 @@
+filename:	${refdata.content.season.title.value}_BeTTV_VSR-Verband.csv
+
+<#setting datetime_format="iso"><#setting locale="de">
+"Name";"Vorname";"Status";"Mitglied";"Schiedst für"
+<#list selection as referee>
+<@compress single_line=true>
+"<#if referee.name??>${referee.name.value}</#if>"
+;
+"<#if referee.firstName??>${referee.firstName.value}</#if>"
+;
+"${referee.status.active.value?string('aktiv', 'passiv')}"
+;
+"<#if referee.member??>${referee.member.displayTitleShort.value}</#if>"
+;
+"<#if referee.reffor??>${referee.reffor.displayTitleShort.value}</#if>"
+</@compress>
+
+</#list>

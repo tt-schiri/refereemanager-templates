@@ -1,7 +1,7 @@
 subject:	Datenblatt
 subtitle:	${current.displayTitle.value}
 date:			Stand: <#setting datetime_format="iso"><#setting locale="de"> ${refdata.info.modified?datetime?string["d. MMMM yyyy"]}
-filename:	${current.fileName.value}.mmd
+filename:	${current.fileName.value}.md
 options:	notitlepage, noauthor, noemail, nosponsorlogo, pagestyle=leer
 
 <#setting datetime_format="iso"><#setting locale="de">
@@ -18,7 +18,7 @@ options:	notitlepage, noauthor, noemail, nosponsorlogo, pagestyle=leer
 			\midrule
 				Name & -->${current.displayTitle.value}<!--\\
 				Ausbildung & -->${current.highestTrainingLevel.type.shorttitle.value} (${current.highestTrainingLevel.type.title.value})<!--\\
-				Mitglied bei & -->${current.member.displayText.value}<!--\\
+				Mitglied bei & --><#if current.member?? >${current.member.displayText.value}<#else>---</#if><!--\\
 				<#if current.reffor??>Schiedst für & -->${current.reffor.displayText.value}<!--\\</#if>
 			\bottomrule
 		\end{longtabu}
@@ -54,7 +54,7 @@ options:	notitlepage, noauthor, noemail, nosponsorlogo, pagestyle=leer
 
 			\multicolumn{2}{@{}l@{}}{\textbf{Sichtbar für VSRA}}\\
 			\midrule
-				VSR-Mitteilungen & --><#if current.EMail?? && (current.EMail?size > 0) >per E-Mail<#if current.docsByLetter.value> und </#if></#if><#if current.docsByLetter.value>per Brief</#if><!--\\
+				VSR-Mitteilungen & --><#if current.EMail?? && (current.EMail?size > 0) >per E-Mail<#if current.docsByLetterCombined.value> und </#if></#if><#if current.docsByLetterCombined.value>per Brief</#if><!--\\
 				Adresse & --><#list current.address as address>${address.displayTitle.value}<#sep>; </#sep><#else>---</#list><!--\\
 				URL & --><#list current.URL as url>${url.displayTitle.value}<#sep>; </#sep><#else>---</#list><!--\\
 				Bevorzugt schiedsen & --><#list current.prefer as prefer>${prefer.displayText.value}<#sep>; </#sep><#else>---</#list><!--\\
